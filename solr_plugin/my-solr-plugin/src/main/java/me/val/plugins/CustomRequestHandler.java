@@ -139,23 +139,14 @@ public class CustomRequestHandler extends RequestHandlerBase {
                         featureVector[i] = result[i];
                     }
 
-                    // Add the document to the response
-                    String arrayAsString = Arrays.toString(result);
-
                     doc.addField("feature_vector", featureVector);
 
                     // Convert SolrInputDocument to Map<String, Object>
                     Map<String, Object> docMap = new HashMap<>();
                     docMap.putAll(doc);
 
-
-
                     rsp.add("image_info", docMap);
-
-                    // calculate similar documents by their rank
-
-                    // namedList.add("result", resultFloatArray);
-
+                    
                     String solrUrl = "http://localhost:8983/solr";
                     String collectionName = "new_core123";
                     int topK = 10;
