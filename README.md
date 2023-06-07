@@ -135,7 +135,7 @@ curl -X POST -H "Content-Type: application/json" -d "{'delete': {'query': '*:*'}
 
 Usando `q={!knn f=feature_vector topK=10}[x_1, x_2, ..., x_64]` restituisce i più simili. Per capire quanto sono simili, ricalcoliamo nel plugin la cosine_similarity.
 
-# 10. Interagire col plugin attraverso l'entry point `/select`
+# 10. Interagire col plugin attraverso l'entry point `/custom`
 
 ```cmd
 curl -X POST -H "Content-Type: image/png" --data-binary "@0070039.png" http://localhost:8983/solr/new_core123/custom
